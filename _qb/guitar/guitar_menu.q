@@ -132,7 +132,7 @@ script create_main_menu
 			setflag = 1
 		}}
 	0xe5282627
-	if ($is_demo_mode = 1)
+	if ($is_demo_mode = 1 || IsWinPort)
 		demo_mode_disable = {rgba = [128 128 128 255] NOT_FOCUSABLE}
 	else
 		demo_mode_disable = {}
@@ -302,7 +302,6 @@ script create_main_menu
 		shadow_offs = (3.0, 3.0)
 		shadow_rgba = [0 0 0 255]
 		z_priority = 60
-		<demo_mode_disable>
 	}
 	GetScreenElementDims Id = <Id>
 	if (<width> > 345)
@@ -707,7 +706,6 @@ script create_main_menu
 			{pad_choose main_menu_select_training}
 		]
 		z_priority = -1
-		<demo_mode_disable>
 	}
 	CreateScreenElement {
 			Type = TextElement
